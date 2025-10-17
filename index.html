@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CodeEnd - Build Your Digital Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter','sans-serif'] },
+                    colors: {
+                        'ce-primary': '#4F46E5',
+                        'ce-accent': '#34D399',
+                        'ce-dark': '#111827'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .section-title { position: relative; padding-bottom: 0.5rem; }
+        .section-title::after {
+            content: ''; position: absolute; bottom: 0; left: 50%;
+            transform: translateX(-50%); width: 80px; height: 4px;
+            background-color: #34D399; border-radius: 9999px;
+        }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .spinner { display:inline-block; width:1.25rem; height:1.25rem; border:3px solid rgba(255,255,255,0.3); border-radius:50%; border-top-color:#ffffff; animation:spin 1s linear infinite; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-ce-dark">
+    <header class="sticky top-0 z-50 bg-white shadow-lg backdrop-blur-md bg-opacity-95">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#home" class="text-3xl font-extrabold text-ce-primary flex items-center">
+                <span class="text-ce-accent text-4xl mr-1">&lt;/&gt;</span>CodeEnd
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#services" class="text-gray-600 hover:text-ce-primary transition duration-300 font-medium">Services</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-ce-primary transition duration-300 font-medium">Portfolio</a>
+                <a href="#about" class="text-gray-600 hover:text-ce-primary transition duration-300 font-medium">About</a>
+                <a href="#contact" class="px-5 py-2 bg-ce-primary text-white rounded-full hover:bg-indigo-700 transition duration-300 shadow-md font-semibold">Contact Us</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#services" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 transition duration-200" onclick="closeMobileMenu()">Services</a>
+            <a href="#portfolio" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 transition duration-200" onclick="closeMobileMenu()">Portfolio</a>
+            <a href="#about" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 transition duration-200" onclick="closeMobileMenu()">About</a>
+            <a href="#contact" class="block py-3 px-6 bg-ce-primary text-white text-center hover:bg-indigo-700 transition duration-300" onclick="closeMobileMenu()">Contact Us</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="relative overflow-hidden pt-20 pb-28 sm:py-32 bg-ce-dark">
+            <svg class="absolute top-0 left-0 opacity-10" width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="210" cy="210" r="200" stroke="#4F46E5" stroke-width="22"/>
+            </svg>
+            <svg class="absolute bottom-0 right-0 opacity-10" width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="40" y="40" width="240" height="240" stroke="#34D399" stroke-width="16" rx="28"/>
+            </svg>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6">
+                    <span class="block">Build Your Digital Future</span>
+                    <span class="block text-ce-accent mt-2">with CodeEnd.</span>
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-10">
+                    Modern, scalable, and secure development solutions tailored to accelerate your business growth.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#contact" class="px-8 py-3 bg-ce-accent text-ce-dark font-bold text-lg rounded-xl hover:bg-emerald-500 transition duration-300 shadow-xl transform hover:scale-105">Start a Project</a>
+                    <a href="#services" class="px-8 py-3 border-2 border-ce-primary text-white font-semibold text-lg rounded-xl hover:bg-ce-primary transition duration-300 transform hover:scale-105">View Our Services</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 sm:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-4xl font-bold text-center mb-16">Our Core Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-500 border border-gray-100 transform hover:-translate-y-2">
+                        <div class="text-ce-primary mb-4">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Custom Web Applications</h3>
+                        <p class="text-gray-600">Building fast, responsive, and powerful web experiences from high-traffic corporate sites to complex e-commerce platforms.</p>
+                        <a href="#contact" class="mt-4 inline-block text-ce-primary font-medium hover:underline">Learn More &rarr;</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-500 border border-gray-100 transform hover:-translate-y-2">
+                        <div class="text-ce-primary mb-4">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L19.5 7.25M9.75 17L5.25 12.5M19.5 7.25L14.25 2L5.25 11.25M9.75 17L14.25 12.5M14.25 12.5L19.5 7.25"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">Enterprise Software</h3>
+                        <p class="text-gray-600">Developing tailor-made business software, CRM systems, and internal tools to streamline operations and enhance productivity.</p>
+                        <a href="#contact" class="mt-4 inline-block text-ce-primary font-medium hover:underline">Learn More &rarr;</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition duration-500 border border-gray-100 transform hover:-translate-y-2">
+                        <div class="text-ce-primary mb-4">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.988 5.002 5.002 0 10-9.776-3.785A4.001 4.001 0 003 15z"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">DevOps & Cloud</h3>
+                        <p class="text-gray-600">Expert guidance on cloud infrastructure (AWS/Azure/GCP), CI/CD pipelines, and ensuring scalable, reliable deployments.</p>
+                        <a href="#contact" class="mt-4 inline-block text-ce-primary font-medium hover:underline">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-20 sm:py-28 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-4xl font-bold text-center mb-16">Recent Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <div class="bg-white rounded-2xl shadow-2xl overflow-hidden hover:shadow-ce-primary/30 transition duration-500 group">
+                        <div class="h-60 bg-gradient-to-r from-ce-primary to-indigo-700 flex items-center justify-center text-white text-3xl font-bold text-center px-4">OmniStore E-commerce</div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-ce-dark mb-2">OmniStore E-commerce</h3>
+                            <p class="text-gray-600 mb-4">A high-performance, headless e-commerce solution built with React and a Python backend, capable of handling 100k+ daily users.</p>
+                            <span class="inline-block bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full mr-2">React</span>
+                            <span class="inline-block bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full mr-2">Python</span>
+                            <span class="inline-block bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">AWS</span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-2xl overflow-hidden hover:shadow-ce-accent/30 transition duration-500 group">
+                        <div class="h-60 bg-gradient-to-r from-ce-accent to-emerald-600 flex items-center justify-center text-ce-dark text-3xl font-bold text-center px-4">Atlas BI Dashboard</div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-ce-dark mb-2">Atlas BI Dashboard</h3>
+                            <p class="text-gray-600 mb-4">A secure, real-time business intelligence dashboard for data visualization and reporting used by over 500 internal employees.</p>
+                            <span class="inline-block bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full mr-2">Angular</span>
+                            <span class="inline-block bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full mr-2">Node.js</span>
+                            <span class="inline-block bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-2xl overflow-hidden hover:shadow-ce-primary/30 transition duration-500 group">
+                        <div class="h-60 bg-gradient-to-r from-ce-primary to-indigo-500 flex items-center justify-center text-white text-3xl font-bold text-center px-4">MediStock Management</div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-ce-dark mb-2">MediStock Management System</h3>
+                            <p class="text-gray-600 mb-4">A comprehensive, secure system for inventory tracking, billing, and supplier management tailored for modern retail medicine shops.</p>
+                            <span class="inline-block bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full mr-2">C#/.NET</span>
+                            <span class="inline-block bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full mr-2">SQL Server</span>
+                            <span class="inline-block bg-gray-200 text-gray-700 text-xs px-3 py-1 rounded-full">Desktop/Web</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 sm:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:flex lg:items-center lg:space-x-12">
+                    <div class="lg:w-1/2 mb-10 lg:mb-0">
+                        <h2 class="section-title text-4xl font-bold lg:text-left text-center mb-6">About CodeEnd</h2>
+                        <p class="text-lg text-gray-600 mb-6">CodeEnd was founded on the principle that exceptional software development should be accessible, transparent, and scalable. We are a dedicated team of engineers, designers, and strategists committed to turning complex business challenges into elegant, functional digital solutions.</p>
+                        <p class="text-lg text-gray-600 mb-6">Our process is collaborative and agile. We don't just write code; we partner with you to understand your end goals, ensuring every feature we build adds genuine, measurable value to your bottom line. We use the latest technologies to future-proof your investment.</p>
+                        <a href="#contact" class="px-6 py-2 bg-ce-primary text-white font-semibold rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md">Join Our Clients</a>
+                    </div>
+                    <div class="lg:w-1/2 bg-gray-200 rounded-2xl p-8 shadow-xl relative overflow-hidden h-96 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-ce-primary opacity-10"></div>
+                        <div class="text-center">
+                            <svg class="w-16 h-16 mx-auto text-ce-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5s3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18s-3.332.477-4.5 1.253"/></svg>
+                            <p class="text-xl font-medium text-ce-dark">Committed to Quality, Driven by Results.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 sm:py-28 bg-ce-dark">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-4xl font-bold text-center text-white mb-16 after:bg-ce-accent">Get In Touch</h2>
+                <div class="bg-white p-8 md:p-12 rounded-2xl shadow-2xl">
+                    <p class="text-lg text-gray-600 text-center mb-8">Ready to discuss your next project? Fill out the form below or reach out directly.</p>
+                    <form id="contact-form">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-ce-primary focus:border-ce-primary transition duration-200">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Work Email</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-ce-primary focus:border-ce-primary transition duration-200">
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-1">I am interested in...</label>
+                            <select id="service" name="service" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-ce-primary focus:border-ce-primary transition duration-200">
+                                <option value="" disabled selected>Select a Service</option>
+                                <option>Custom Web Application Development</option>
+                                <option>Enterprise Software Solutions</option>
+                                <option>Cloud & DevOps Consulting</option>
+                                <option>General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="mt-6">
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Project Details</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-ce-primary focus:border-ce-primary transition duration-200"></textarea>
+                        </div>
+                        <input type="hidden" name="_subject" value="New CodeEnd Inquiry from Website">
+                        <div class="mt-8 text-center">
+                            <button type="submit" id="submit-button" class="w-full md:w-auto px-8 py-3 bg-ce-accent text-ce-dark font-bold text-lg rounded-xl hover:bg-emerald-500 transition duration-300 shadow-xl transform hover:scale-105">Send Inquiry</button>
+                        </div>
+                        <div id="submission-message" class="hidden mt-6 p-4 rounded-lg text-center font-semibold" role="alert"></div>
+                    </form>
+                </div>
+                <div class="text-center mt-12 text-gray-400 text-sm">
+                    <p>📞 9883399548 | 9593073629</p>
+                    <p class="mt-1">📧 codeendbs@gmail.com</p>
+                    <p class="mt-1">🏠 Malda 732101</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-extrabold text-ce-accent mb-3">CodeEnd</h3>
+                    <p class="text-gray-400 text-sm">Modern development solutions for a connected world.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#services" class="hover:text-ce-accent transition duration-200">Our Services</a></li>
+                        <li><a href="#portfolio" class="hover:text-ce-accent transition duration-200">Case Studies</a></li>
+                        <li><a href="#about" class="hover:text-ce-accent transition duration-200">About Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>codeendbs@gmail.com</li>
+                        <li>9883399548</li>
+                        <li>Malda 732101</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Follow Us</h4>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-ce-accent transition duration-200 text-2xl">🔗</a>
+                        <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-ce-accent transition duration-200 text-2xl">🐦</a>
+                        <a href="#" aria-label="GitHub" class="text-gray-400 hover:text-ce-accent transition duration-200 text-2xl">💻</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">&copy; 2025 CodeEnd Development. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        function closeMobileMenu() { if (!mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden'); }
+
+        const FORMSPREE_URL = 'https://formspree.io/f/mkgqkelq';
+        const form = document.getElementById('contact-form');
+        const submitButton = document.getElementById('submit-button');
+        const messageBox = document.getElementById('submission-message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<span class="spinner"></span> Sending...';
+            submitButton.classList.add('opacity-80', 'cursor-wait');
+            messageBox.className = 'mt-6 p-4 rounded-lg text-center font-semibold bg-gray-200 text-gray-700';
+            messageBox.textContent = 'Submitting form...';
+            messageBox.classList.remove('hidden');
+
+            const formData = new FormData(form);
+
+            try {
+                const resp = await fetch(FORMSPREE_URL, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (resp.ok) {
+                    const name = document.getElementById('name').value || '';
+                    const email = document.getElementById('email').value || '';
+                    messageBox.textContent = `Success! Thank you${name ? ', ' + name : ''}. `;
+                    messageBox.className = 'mt-6 p-4 rounded-lg text-center font-semibold bg-ce-accent/20 text-ce-dark';
+                    form.reset();
+                } else {
+                    console.error('Formspree error status:', resp.status);
+                    messageBox.textContent = 'Submission Error: There was an issue sending your inquiry. Please try again or email us directly at codeendbs@gmail.com.';
+                    messageBox.className = 'mt-6 p-4 rounded-lg text-center font-semibold bg-red-100 text-red-700';
+                }
+            } catch (err) {
+                console.error('Network or fetch error:', err);
+                messageBox.textContent = 'Network Error: Could not connect to the submission service. Please check your internet connection or email us directly at codeendbs@gmail.com.';
+                messageBox.className = 'mt-6 p-4 rounded-lg text-center font-semibold bg-red-100 text-red-700';
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Inquiry';
+                submitButton.classList.remove('opacity-80', 'cursor-wait');
+            }
+        });
+    </script>
+</body>
+</html>
